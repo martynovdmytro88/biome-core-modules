@@ -1,0 +1,14 @@
+{
+    "name": "Biome.LocalStore.Data",
+    "rootNamespace": "Biome.LocalStore.Data",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

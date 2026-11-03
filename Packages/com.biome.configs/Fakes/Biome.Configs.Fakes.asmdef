@@ -1,0 +1,19 @@
+{
+    "name": "Biome.Configs.Fakes",
+    "rootNamespace": "Biome.Configs.Fakes",
+    "references": [
+        "Biome.Configs.Abstract",
+        "UniTask"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

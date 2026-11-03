@@ -1,0 +1,13 @@
+using Biome.GameStates.Abstract;
+using VContainer;
+using VContainer.Unity;
+
+namespace Biome.GameStates.Installers
+{
+    public sealed class GameStatesInstaller : IInstaller
+    {
+        public void Install(IContainerBuilder builder)
+        {
+        }
+    }
+}

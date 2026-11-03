@@ -1,0 +1,18 @@
+{
+    "name": "Biome.EventBus.Fakes",
+    "rootNamespace": "Biome.EventBus.Fakes",
+    "references": [
+        "Biome.EventBus.Abstract"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,9 @@
+using Biome.PlayerData.Abstract;
+using Biome.PlayerData.Data;
+
+namespace Biome.PlayerData
+{
+    public sealed class PlayerDataService
+    {
+    }
+}

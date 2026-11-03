@@ -1,0 +1,22 @@
+{
+    "name": "Biome.GameStates",
+    "rootNamespace": "Biome.GameStates",
+    "references": [
+        "Biome.GameStates.Abstract",
+        "Biome.GameStates.Data",
+        "Biome.GameStates.Config",
+        "Biome.GameStates.Events",
+        "Biome.Assets.Abstract",
+        "Biome.EventBus.Abstract",
+        "UniTask"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

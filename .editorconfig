@@ -1,0 +1,82 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.cs]
+indent_style = space
+indent_size = 4
+
+# layout — Allman, braces always, usings outside, block namespaces while LangVersion 9
+csharp_new_line_before_open_brace = all
+csharp_new_line_before_else = true
+csharp_new_line_before_catch = true
+csharp_new_line_before_finally = true
+csharp_prefer_braces = true:warning
+csharp_style_namespace_declarations = block_scoped:warning
+csharp_using_directive_placement = outside_namespace:warning
+dotnet_sort_system_directives_first = true
+dotnet_separate_import_directive_groups = false
+
+# types, var, readonly, accessibility
+dotnet_style_predefined_type_for_locals_parameters_members = true:warning
+dotnet_style_predefined_type_for_member_access = true:warning
+dotnet_style_readonly_field = true:warning
+dotnet_style_require_accessibility_modifiers = always:warning
+csharp_style_var_for_built_in_types = true:suggestion
+csharp_style_var_when_type_is_apparent = true:suggestion
+csharp_style_var_elsewhere = false:suggestion
+csharp_style_expression_bodied_methods = when_on_single_line:suggestion
+csharp_style_expression_bodied_properties = true:suggestion
+csharp_style_expression_bodied_accessors = true:suggestion
+
+# naming — private/internal instance fields: _camelCase
+dotnet_naming_rule.private_fields_underscore.symbols   = private_fields
+dotnet_naming_rule.private_fields_underscore.style     = underscore_camel
+dotnet_naming_rule.private_fields_underscore.severity  = warning
+dotnet_naming_symbols.private_fields.applicable_kinds  = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private, internal
+dotnet_naming_style.underscore_camel.capitalization    = camel_case
+dotnet_naming_style.underscore_camel.required_prefix   = _
+
+# naming — private static fields: s_camelCase (more specific: wins over the rule above)
+dotnet_naming_rule.private_static_fields_s.symbols     = private_static_fields
+dotnet_naming_rule.private_static_fields_s.style       = s_camel
+dotnet_naming_rule.private_static_fields_s.severity    = warning
+dotnet_naming_symbols.private_static_fields.applicable_kinds = field
+dotnet_naming_symbols.private_static_fields.applicable_accessibilities = private, internal
+dotnet_naming_symbols.private_static_fields.required_modifiers = static
+dotnet_naming_style.s_camel.capitalization             = camel_case
+dotnet_naming_style.s_camel.required_prefix            = s_
+
+# naming — constants PascalCase; interfaces I*; type parameters T*; public members PascalCase
+dotnet_naming_rule.constants_pascal.symbols            = constants
+dotnet_naming_rule.constants_pascal.style              = pascal
+dotnet_naming_rule.constants_pascal.severity           = warning
+dotnet_naming_symbols.constants.applicable_kinds       = field
+dotnet_naming_symbols.constants.applicable_accessibilities = *
+dotnet_naming_symbols.constants.required_modifiers     = const
+dotnet_naming_style.pascal.capitalization              = pascal_case
+
+dotnet_naming_rule.interfaces_i.symbols                = interfaces
+dotnet_naming_rule.interfaces_i.style                  = i_pascal
+dotnet_naming_rule.interfaces_i.severity               = warning
+dotnet_naming_symbols.interfaces.applicable_kinds      = interface
+dotnet_naming_style.i_pascal.capitalization            = pascal_case
+dotnet_naming_style.i_pascal.required_prefix           = I
+
+dotnet_naming_rule.type_params_t.symbols               = type_params
+dotnet_naming_rule.type_params_t.style                 = t_pascal
+dotnet_naming_rule.type_params_t.severity              = warning
+dotnet_naming_symbols.type_params.applicable_kinds     = type_parameter
+dotnet_naming_style.t_pascal.capitalization            = pascal_case
+dotnet_naming_style.t_pascal.required_prefix           = T
+
+dotnet_naming_rule.public_members_pascal.symbols       = public_members
+dotnet_naming_rule.public_members_pascal.style         = pascal
+dotnet_naming_rule.public_members_pascal.severity      = warning
+dotnet_naming_symbols.public_members.applicable_kinds  = property, method, event, field
+dotnet_naming_symbols.public_members.applicable_accessibilities = public

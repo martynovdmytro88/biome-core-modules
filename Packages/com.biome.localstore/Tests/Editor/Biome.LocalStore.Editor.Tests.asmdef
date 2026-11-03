@@ -1,0 +1,26 @@
+{
+    "name": "Biome.LocalStore.Editor.Tests",
+    "rootNamespace": "Biome.LocalStore.Editor.Tests",
+    "references": [
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "Biome.LocalStore.Abstract",
+        "Biome.LocalStore.Config",
+        "Biome.LocalStore.Fakes"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

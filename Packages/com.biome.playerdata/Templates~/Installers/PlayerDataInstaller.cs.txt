@@ -1,0 +1,13 @@
+using Biome.PlayerData.Abstract;
+using VContainer;
+using VContainer.Unity;
+
+namespace Biome.PlayerData.Installers
+{
+    public sealed class PlayerDataInstaller : IInstaller
+    {
+        public void Install(IContainerBuilder builder)
+        {
+        }
+    }
+}

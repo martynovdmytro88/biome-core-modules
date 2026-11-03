@@ -1,0 +1,10 @@
+using Biome.LocalStore.Abstract;
+using Biome.LocalStore.Config;
+using Biome.LocalStore.Data;
+
+namespace Biome.LocalStore
+{
+    public sealed class LocalStoreService
+    {
+    }
+}

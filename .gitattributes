@@ -1,0 +1,26 @@
+# biome-core-modules — git attributes
+#
+# Line-ending normalization and Unity YAML smart-merge. The YAML merge needs the Unity smart-merge tool wired into git
+# (`git config merge.unityyamlmerge …`). No Git LFS: the repository holds no binary media.
+
+## ── Line endings ────────────────────────────────────────────────────────────
+# Auto-detect text vs binary; normalize committed text to LF.
+* text=auto eol=lf
+
+# Explicit text types (diff-friendly).
+*.cs        text diff=csharp
+*.json      text
+*.md        text
+*.txt       text
+*.asmdef    text
+*.asmref    text
+*.editorconfig text
+*.gitattributes text
+*.gitignore text
+
+## ── Unity YAML — smart merge, force LF ───────────────────────────────────────
+*.unity            merge=unityyamlmerge eol=lf
+*.prefab           merge=unityyamlmerge eol=lf
+*.mat              merge=unityyamlmerge eol=lf
+*.asset            merge=unityyamlmerge eol=lf
+*.meta             merge=unityyamlmerge eol=lf

@@ -1,0 +1,16 @@
+{
+    "name": "Biome.Configs.Abstract",
+    "rootNamespace": "Biome.Configs.Abstract",
+    "references": [
+        "UniTask"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

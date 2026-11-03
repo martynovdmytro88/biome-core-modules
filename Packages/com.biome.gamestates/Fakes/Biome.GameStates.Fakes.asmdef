@@ -1,0 +1,19 @@
+{
+    "name": "Biome.GameStates.Fakes",
+    "rootNamespace": "Biome.GameStates.Fakes",
+    "references": [
+        "Biome.GameStates.Abstract",
+        "UniTask"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

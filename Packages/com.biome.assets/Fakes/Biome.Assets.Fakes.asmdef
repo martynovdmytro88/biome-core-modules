@@ -1,0 +1,19 @@
+{
+    "name": "Biome.Assets.Fakes",
+    "rootNamespace": "Biome.Assets.Fakes",
+    "references": [
+        "Biome.Assets.Abstract",
+        "UniTask"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

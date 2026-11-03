@@ -1,0 +1,10 @@
+using Biome.GameStates.Abstract;
+using Biome.GameStates.Config;
+using Biome.GameStates.Data;
+
+namespace Biome.GameStates
+{
+    public sealed class GameStatesService
+    {
+    }
+}

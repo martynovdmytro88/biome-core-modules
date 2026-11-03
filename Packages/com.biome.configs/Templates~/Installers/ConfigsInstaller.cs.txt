@@ -1,0 +1,13 @@
+using Biome.Configs.Abstract;
+using VContainer;
+using VContainer.Unity;
+
+namespace Biome.Configs.Installers
+{
+    public sealed class ConfigsInstaller : IInstaller
+    {
+        public void Install(IContainerBuilder builder)
+        {
+        }
+    }
+}

@@ -1,0 +1,10 @@
+using Biome.EventBus.Abstract;
+using Biome.EventBus.Config;
+using Biome.EventBus.Data;
+
+namespace Biome.EventBus
+{
+    public sealed class EventBusService
+    {
+    }
+}
