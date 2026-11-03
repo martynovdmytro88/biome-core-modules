@@ -24,7 +24,7 @@ In the host's `Packages/manifest.json`, pin a package on its tag, never on a bra
 ```json
 {
   "dependencies": {
-    "com.biome.eventbus": "git@github.com:martynovdmytro88/biome-core-modules.git?path=/Packages/com.biome.eventbus#eventbus/v0.1.0",
+    "com.biome.eventbus": "https://github.com/martynovdmytro88/biome-core-modules.git?path=/Packages/com.biome.eventbus#eventbus/v0.1.0",
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask#2.5.11"
   },
   "testables": ["com.biome.eventbus"]
@@ -35,8 +35,8 @@ In the host's `Packages/manifest.json`, pin a package on its tag, never on a bra
   package it needs along with their dependencies, UniTask included. Check versions against each `package.json`.
 - **`testables`:** a package's test assemblies stay out of the Test Runner, and out of reach of the host's own test
   assemblies, until the package is listed there.
-- **Credentials:** the repository is private, so the machine and CI need an SSH key or a credential helper. Unity does not
-  authenticate on its own.
+- **Credentials:** the repository is private, so the machine and CI need a git credential helper holding a GitHub token.
+  Unity does not prompt for a login. Never put a token in the URL: the manifest is committed.
 
 ## Local development
 

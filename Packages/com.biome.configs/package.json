@@ -1,6 +1,6 @@
 {
   "name": "com.biome.configs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "displayName": "Biome Configs",
   "description": "The Configs module contract: the configs service, reader, provider, environment and loader interfaces with their fakes. The implementation and the environment config live in the host.",
   "unity": "6000.5",

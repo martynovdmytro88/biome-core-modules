@@ -1,11 +1,11 @@
 {
   "name": "com.biome.playerdata",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "displayName": "Biome PlayerData",
   "description": "The PlayerData module contract: the player's persistent facts, the growing record and the in-memory fake. The implementation lives in the host.",
   "unity": "6000.5",
   "dependencies": {
-    "com.biome.localstore": "0.1.0",
-    "com.biome.eventbus": "0.1.0"
+    "com.biome.localstore": "0.1.1",
+    "com.biome.eventbus": "0.1.1"
   }
 }
