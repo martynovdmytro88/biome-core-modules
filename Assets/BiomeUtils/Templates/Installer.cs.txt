@@ -1,0 +1,18 @@
+using {Namespace}.Abstract;
+using VContainer;
+using VContainer.Unity;
+
+namespace {Namespace}.Installers
+{
+    /// <summary>
+    /// Prod registration: one production <see cref="I{ModuleId}Service"/> per scope, built by
+    /// <see cref="{ModuleId}Factory.Create"/>. A thin passthrough of <see cref="IContainerBuilder"/>.
+    /// </summary>
+    public sealed class {ModuleId}Installer : IInstaller
+    {
+        public void Install(IContainerBuilder builder)
+        {
+            builder.Register<I{ModuleId}Service>(_ => {ModuleId}Factory.Create(), Lifetime.Singleton);
+        }
+    }
+}

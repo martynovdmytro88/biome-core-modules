@@ -1,0 +1,19 @@
+using {Namespace}.Abstract;
+using {Namespace}.Fakes;
+using VContainer;
+using VContainer.Unity;
+
+namespace {Namespace}.Installers.Mock
+{
+    /// <summary>
+    /// Mock registration: the <see cref="Fake{ModuleId}Service"/> under the same contract as the production installer,
+    /// one per scope. Editor-only.
+    /// </summary>
+    public sealed class Mock{ModuleId}Installer : IInstaller
+    {
+        public void Install(IContainerBuilder builder)
+        {
+            builder.Register<I{ModuleId}Service>(_ => new Fake{ModuleId}Service(), Lifetime.Singleton);
+        }
+    }
+}

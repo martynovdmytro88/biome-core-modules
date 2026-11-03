@@ -1,0 +1,16 @@
+{
+    "name": "{AsmdefRoot}.{Module}.Events",
+    "rootNamespace": "{Namespace}.Events",
+    "references": [
+        "{AsmdefRoot}.{Module}.Data"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

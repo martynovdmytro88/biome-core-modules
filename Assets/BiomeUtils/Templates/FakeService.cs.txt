@@ -1,0 +1,12 @@
+using {Namespace}.Abstract;
+
+namespace {Namespace}.Fakes
+{
+    /// <summary>
+    /// The shipped fake of <see cref="I{ModuleId}Service"/> — Editor-only, never in the prod build. Consumers of the
+    /// module test against it; the contract suite proves it behaves like the production implementation.
+    /// </summary>
+    public sealed class Fake{ModuleId}Service : I{ModuleId}Service
+    {
+    }
+}

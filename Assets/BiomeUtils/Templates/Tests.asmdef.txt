@@ -1,0 +1,28 @@
+{
+    "name": "{AsmdefRoot}.{Module}.Tests",
+    "rootNamespace": "{Namespace}.Tests",
+    "references": [
+        "{AsmdefRoot}.{Module}.Abstract",
+        "{AsmdefRoot}.{Module}.Data",
+        "{AsmdefRoot}.{Module}.Config",
+        "{AsmdefRoot}.{Module}",
+        "{AsmdefRoot}.{Module}.Fakes",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

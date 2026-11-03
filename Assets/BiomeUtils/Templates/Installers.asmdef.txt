@@ -1,0 +1,19 @@
+{
+    "name": "{AsmdefRoot}.{Module}.Installers",
+    "rootNamespace": "{Namespace}.Installers",
+    "references": [
+        "{AsmdefRoot}.{Module}",
+        "{AsmdefRoot}.{Module}.Abstract",
+        "{AsmdefRoot}.{Module}.Config",
+        "VContainer"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

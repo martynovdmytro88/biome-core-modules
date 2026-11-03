@@ -1,0 +1,12 @@
+using {Namespace}.Abstract;
+
+namespace {Namespace}
+{
+    /// <summary>
+    /// The production implementation of <see cref="I{ModuleId}Service"/>. Internal: every caller outside the
+    /// <c>Runtime</c> assembly builds it through <see cref="{ModuleId}Factory"/>.
+    /// </summary>
+    internal sealed class {ModuleId}Service : I{ModuleId}Service
+    {
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "name": "{AsmdefRoot}.{Module}.Installers.Mock",
+    "rootNamespace": "{Namespace}.Installers.Mock",
+    "references": [
+        "{AsmdefRoot}.{Module}.Abstract",
+        "{AsmdefRoot}.{Module}.Fakes",
+        "VContainer"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

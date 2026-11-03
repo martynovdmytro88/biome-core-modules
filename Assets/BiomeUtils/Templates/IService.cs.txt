@@ -1,0 +1,11 @@
+namespace {Namespace}.Abstract
+{
+    /// <summary>
+    /// The public contract of the {Module} module — the Coder's entry point. Laid empty by create_module; every member
+    /// added here is exercised by {ModuleId}ContractTests, which runs on both the production implementation and the
+    /// shipped fake.
+    /// </summary>
+    public interface I{ModuleId}Service
+    {
+    }
+}

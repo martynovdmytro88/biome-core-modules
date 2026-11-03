@@ -1,0 +1,6 @@
+{
+  "modulesFolder": "{project-name}/Modules",
+  "asmdefRoot": "{asmdef-root}",
+  "appNamespace": "{asmdef-root}.App",
+  "statesRoot": "{project-name}/App/States"
+}

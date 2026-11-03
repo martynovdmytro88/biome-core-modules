@@ -1,0 +1,6 @@
+{
+  "modulesFolder": "App/Modules",
+  "asmdefRoot": "Biome",
+  "appNamespace": "Biome.App",
+  "statesRoot": "App/States"
+}

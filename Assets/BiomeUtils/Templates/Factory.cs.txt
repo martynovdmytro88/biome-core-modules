@@ -1,0 +1,18 @@
+using {Namespace}.Abstract;
+
+namespace {Namespace}
+{
+    /// <summary>
+    /// The creation point of the production <see cref="I{ModuleId}Service"/>: the implementation is internal, so the
+    /// installer and the contract fixture build it here. Pure — no container, no state.
+    /// </summary>
+    public static class {ModuleId}Factory
+    {
+        /// <summary>Creates the production service.</summary>
+        /// <returns>A new production instance.</returns>
+        public static I{ModuleId}Service Create()
+        {
+            return new {ModuleId}Service();
+        }
+    }
+}

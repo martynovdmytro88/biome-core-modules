@@ -1,0 +1,23 @@
+{
+    "name": "Biome.Utils.GameStates.Tests",
+    "rootNamespace": "Biome.Utils.GameStates.Tests",
+    "references": [
+        "Biome.Utils.GameStates",
+        "Biome.Utils.Commands",
+        "Unity.Pipeline",
+        "UnityEngine.TestRunner"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

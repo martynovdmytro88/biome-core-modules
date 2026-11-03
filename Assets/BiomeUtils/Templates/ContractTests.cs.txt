@@ -1,0 +1,22 @@
+using {Namespace}.Abstract;
+using NUnit.Framework;
+
+namespace {Namespace}.Tests
+{
+    /// <summary>
+    /// The contract suite of the {Module} module, written once over <see cref="I{ModuleId}Service"/> and run on every
+    /// implementation (one concrete fixture each). Add one test per contract behaviour; never a test that names an
+    /// implementation.
+    /// </summary>
+    public abstract class {ModuleId}ContractTests
+    {
+        /// <summary>The implementation under test; called once per test.</summary>
+        protected abstract I{ModuleId}Service CreateService();
+
+        [Test]
+        public void Create_Default_ReturnsService()
+        {
+            Assert.That(CreateService(), Is.Not.Null);
+        }
+    }
+}

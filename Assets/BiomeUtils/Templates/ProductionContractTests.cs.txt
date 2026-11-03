@@ -1,0 +1,12 @@
+using {Namespace}.Abstract;
+using NUnit.Framework;
+
+namespace {Namespace}.Tests
+{
+    /// <summary>The contract suite over the production implementation.</summary>
+    [TestFixture]
+    public sealed class Production{ModuleId}ContractTests : {ModuleId}ContractTests
+    {
+        protected override I{ModuleId}Service CreateService() => {ModuleId}Factory.Create();
+    }
+}

@@ -54,8 +54,19 @@ The path is relative to the host's `Packages/` folder. Move the pin back to a ta
 - A breaking contract change is a major version.
 - A contract change means an edit in the package, an entry in its `CHANGELOG.md` and a new tag. Hosts then move their pins.
 
+## Default utilities
+
+`Assets/BiomeUtils/` is the source of the default utilities: the callable layer, `create_module`, `create_game_state` and their
+templates. It is not a package: a host owns its copy under `Assets/BiomeUtils/` and may adapt it, so a later fix here reaches a
+host only by copying again. The tag `utils/vX.Y.Z` marks the version a copy was taken from.
+
+- **A host's copy:** the whole of `Commands/`, `Templates/`, `Tests/` with the first module; `GameStates/` with `com.biome.gamestates`.
+- **The one host file:** `biome-utils.json`, filled from `biome-utils.json.txt` with the host's `{project-name}` and `{asmdef-root}`.
+- **Dependencies:** `com.unity.pipeline` and `com.unity.inputsystem` in the host's manifest. The pipeline package does not
+  declare the second one, yet needs it when the project's active input handling includes the Input System.
+
 ## Authoring project
 
-The repository root is also an empty Unity project (`6000.5.4f1`). Open it to compile the packages and run their suites in
-the Test Runner without a host. The packages are embedded here, so `Packages/manifest.json` has no `com.biome.*` entries and
-no `testables`.
+The repository root is also a Unity project (`6000.5.4f1`). Open it to compile the packages and the utilities and run their
+suites in the Test Runner without a host. The packages are embedded here, so `Packages/manifest.json` has no `com.biome.*`
+entries and no `testables`. Tests that need a host layer or VContainer report Inconclusive here.

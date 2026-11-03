@@ -3,7 +3,7 @@
 > Append-only, via the `changelog` command (the sole writer). Active log = the last 5 entries; older
 > entries live in `CHANGELOG/` range files (~20 KB each). Level-specific wording: `CONFIGS/changelog-preamble.md`.
 
-current-version: v0.2
+current-version: v0.3
 
 ## Archive index
 
@@ -17,3 +17,4 @@ current-version: v0.2
 |---------|------|--------------|
 | v0.1 | 2026-11-03 21:28 +0200 | **Monorepo laid.** Six packages 0.1.0 received from marauders-unity 4e79de0: eventbus, localstore, assets, configs, gamestates, playerdata; empty authoring Unity project on 6000.5.4f1. |
 | v0.2 | 2026-11-03 23:39 +0200 | **Host skeleton templates in the six packages.** Packages 0.1.2: Templates~ completed for create_module host-only mode under the real host class names; the state templates moved from com.biome.gamestates to the host-side generator. |
+| v0.3 | 2026-11-03 23:54 +0200 | **Default utilities source.** Assets/BiomeUtils received from the host as the source of the default utilities, copied into a host rather than pinned as a package: callable layer, create_module, create_game_state, templates, tests; biome-utils.json.txt as the host config form; com.unity.pipeline added to the authoring project. |

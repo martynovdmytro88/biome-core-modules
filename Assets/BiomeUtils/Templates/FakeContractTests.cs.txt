@@ -1,0 +1,13 @@
+using {Namespace}.Abstract;
+using {Namespace}.Fakes;
+using NUnit.Framework;
+
+namespace {Namespace}.Tests
+{
+    /// <summary>The contract suite over the shipped fake.</summary>
+    [TestFixture]
+    public sealed class Fake{ModuleId}ContractTests : {ModuleId}ContractTests
+    {
+        protected override I{ModuleId}Service CreateService() => new Fake{ModuleId}Service();
+    }
+}

@@ -1,0 +1,22 @@
+using System.Threading;
+using Biome.GameStates.Abstract;
+using Cysharp.Threading.Tasks;
+
+namespace {{Namespace}}
+{
+    /// <summary>The {{StateId}} state: a shell with its scene; the behaviour comes later.</summary>
+    public sealed class {{StateId}}State : IGameState
+    {
+        /// <inheritdoc />
+        public UniTask EnterAsync(CancellationToken ct)
+        {
+            return UniTask.CompletedTask;
+        }
+
+        /// <inheritdoc />
+        public UniTask ExitAsync(CancellationToken ct)
+        {
+            return UniTask.CompletedTask;
+        }
+    }
+}
