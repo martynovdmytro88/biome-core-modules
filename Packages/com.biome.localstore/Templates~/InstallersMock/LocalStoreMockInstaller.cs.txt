@@ -1,0 +1,14 @@
+using Biome.LocalStore.Abstract;
+using Biome.LocalStore.Fakes;
+using VContainer;
+using VContainer.Unity;
+
+namespace Biome.LocalStore.Installers.Mock
+{
+    public sealed class LocalStoreMockInstaller : IInstaller
+    {
+        public void Install(IContainerBuilder builder)
+        {
+        }
+    }
+}

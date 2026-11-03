@@ -1,5 +1,4 @@
 using Biome.LocalStore.Abstract;
-using Biome.LocalStore.Config;
 using VContainer;
 using VContainer.Unity;
 

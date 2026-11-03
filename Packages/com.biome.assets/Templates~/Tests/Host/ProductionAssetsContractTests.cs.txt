@@ -1,0 +1,18 @@
+using System;
+using Biome.Assets.Abstract;
+using NUnit.Framework;
+
+namespace Biome.Assets.Tests.Host
+{
+    /// <summary>Binds the package's contract suite to the production implementation; red until the hooks are bound.</summary>
+    [TestFixture]
+    public sealed class ProductionAssetsContractTests : AssetsContractTests
+    {
+        protected override AssetKey KeyA => throw new NotImplementedException();
+        protected override AssetKey KeyB => throw new NotImplementedException();
+        protected override AssetLabel Label => throw new NotImplementedException();
+        protected override AssetKey SceneKey => throw new NotImplementedException();
+        protected override int LiveSceneCount => throw new NotImplementedException();
+        protected override IAssetsService CreateService() => throw new NotImplementedException();
+    }
+}

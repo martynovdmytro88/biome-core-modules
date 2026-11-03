@@ -1,5 +1,4 @@
 using Biome.EventBus.Abstract;
-using Biome.EventBus.Config;
 using VContainer;
 using VContainer.Unity;
 

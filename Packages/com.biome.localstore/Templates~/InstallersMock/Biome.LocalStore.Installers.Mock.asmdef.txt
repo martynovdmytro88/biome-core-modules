@@ -1,0 +1,20 @@
+{
+    "name": "Biome.LocalStore.Installers.Mock",
+    "rootNamespace": "Biome.LocalStore.Installers.Mock",
+    "references": [
+        "Biome.LocalStore.Abstract",
+        "Biome.LocalStore.Fakes",
+        "VContainer"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

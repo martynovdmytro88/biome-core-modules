@@ -1,0 +1,15 @@
+using System;
+using System.Collections.Generic;
+using Biome.Configs.Abstract;
+using Biome.Configs.Editor.Tests;
+using NUnit.Framework;
+
+namespace Biome.Configs.Tests.Host
+{
+    /// <summary>Binds the package's contract suite to the production implementation; red until the hooks are bound.</summary>
+    [TestFixture]
+    public sealed class ProductionConfigsServiceContractTests : ConfigsServiceContractTests
+    {
+        protected override IConfigsService CreateService(IReadOnlyList<IConfigLoader> loaders, IReadOnlyList<object> baseConfigs) => throw new NotImplementedException();
+    }
+}

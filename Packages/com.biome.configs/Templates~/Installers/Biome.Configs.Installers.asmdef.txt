@@ -1,0 +1,19 @@
+{
+    "name": "Biome.Configs.Installers",
+    "rootNamespace": "Biome.Configs.Installers",
+    "references": [
+        "Biome.Configs",
+        "Biome.Configs.Abstract",
+        "Biome.Configs.Data",
+        "VContainer"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

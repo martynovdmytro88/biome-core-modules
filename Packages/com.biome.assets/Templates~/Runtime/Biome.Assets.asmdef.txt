@@ -4,11 +4,7 @@
     "references": [
         "Biome.Assets.Abstract",
         "Biome.Assets.Data",
-        "Biome.Assets.Config",
-        "UniTask",
-        "UniTask.Addressables",
-        "Unity.Addressables",
-        "Unity.ResourceManager"
+        "UniTask"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

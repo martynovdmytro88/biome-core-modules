@@ -4,8 +4,6 @@
     "references": [
         "Biome.GameStates.Abstract",
         "Biome.GameStates.Data",
-        "Biome.GameStates.Config",
-        "Biome.GameStates.Events",
         "Biome.Assets.Abstract",
         "Biome.EventBus.Abstract",
         "UniTask"

@@ -1,0 +1,20 @@
+{
+    "name": "Biome.EventBus.Installers.Mock",
+    "rootNamespace": "Biome.EventBus.Installers.Mock",
+    "references": [
+        "Biome.EventBus.Abstract",
+        "Biome.EventBus.Fakes",
+        "VContainer"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

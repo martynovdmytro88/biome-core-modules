@@ -1,0 +1,26 @@
+{
+    "name": "Biome.EventBus.Tests.Host",
+    "rootNamespace": "Biome.EventBus.Tests.Host",
+    "references": [
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "Biome.EventBus.Editor.Tests",
+        "Biome.EventBus",
+        "Biome.EventBus.Abstract"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

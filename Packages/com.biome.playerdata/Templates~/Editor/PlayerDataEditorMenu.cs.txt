@@ -1,0 +1,6 @@
+namespace Biome.PlayerData.Editor
+{
+    public static class PlayerDataEditorMenu
+    {
+    }
+}

@@ -5,7 +5,6 @@
         "Biome.PlayerData.Abstract",
         "Biome.PlayerData.Data",
         "Biome.LocalStore.Abstract",
-        "Biome.PlayerData.Events",
         "Biome.EventBus.Abstract"
     ],
     "includePlatforms": [],

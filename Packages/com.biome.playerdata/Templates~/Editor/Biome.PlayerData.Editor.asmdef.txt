@@ -1,0 +1,20 @@
+{
+    "name": "Biome.PlayerData.Editor",
+    "rootNamespace": "Biome.PlayerData.Editor",
+    "references": [
+        "Biome.PlayerData",
+        "Biome.PlayerData.Data",
+        "Biome.LocalStore.Abstract"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

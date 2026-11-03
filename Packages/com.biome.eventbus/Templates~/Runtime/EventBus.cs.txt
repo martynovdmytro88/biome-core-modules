@@ -1,0 +1,8 @@
+using Biome.EventBus.Abstract;
+
+namespace Biome.EventBus
+{
+    internal sealed class EventBus
+    {
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "name": "Biome.GameStates.Tests.Host",
+    "rootNamespace": "Biome.GameStates.Tests.Host",
+    "references": [
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "Biome.GameStates.Editor.Tests",
+        "Biome.GameStates",
+        "Biome.GameStates.Abstract",
+        "Biome.GameStates.Fakes",
+        "UniTask"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

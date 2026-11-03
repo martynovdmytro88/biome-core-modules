@@ -1,0 +1,8 @@
+using Biome.GameStates.Abstract;
+
+namespace Biome.GameStates
+{
+    public sealed class GameStateMachine
+    {
+    }
+}

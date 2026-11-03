@@ -1,0 +1,14 @@
+using Biome.Configs.Abstract;
+using Biome.Configs.Fakes;
+using VContainer;
+using VContainer.Unity;
+
+namespace Biome.Configs.Installers.Mock
+{
+    public sealed class ConfigsInstallerMock : IInstaller
+    {
+        public void Install(IContainerBuilder builder)
+        {
+        }
+    }
+}

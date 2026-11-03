@@ -1,0 +1,8 @@
+using Biome.LocalStore.Abstract;
+
+namespace Biome.LocalStore
+{
+    internal sealed class LocalStore
+    {
+    }
+}

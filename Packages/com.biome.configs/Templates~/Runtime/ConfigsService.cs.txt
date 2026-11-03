@@ -1,6 +1,4 @@
 using Biome.Configs.Abstract;
-using Biome.Configs.Config;
-using Biome.Configs.Data;
 
 namespace Biome.Configs
 {

@@ -1,0 +1,14 @@
+using Biome.Assets.Abstract;
+using Biome.Assets.Fakes;
+using VContainer;
+using VContainer.Unity;
+
+namespace Biome.Assets.Installers.Mock
+{
+    public sealed class MockAssetsInstaller : IInstaller
+    {
+        public void Install(IContainerBuilder builder)
+        {
+        }
+    }
+}

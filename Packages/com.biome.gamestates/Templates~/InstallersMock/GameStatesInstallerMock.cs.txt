@@ -1,0 +1,14 @@
+using Biome.GameStates.Abstract;
+using Biome.GameStates.Fakes;
+using VContainer;
+using VContainer.Unity;
+
+namespace Biome.GameStates.Installers.Mock
+{
+    public sealed class GameStatesInstallerMock : IInstaller
+    {
+        public void Install(IContainerBuilder builder)
+        {
+        }
+    }
+}

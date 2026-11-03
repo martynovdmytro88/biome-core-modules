@@ -1,0 +1,6 @@
+namespace Biome.GameStates.Events
+{
+    public readonly struct StateSwitchedEvent
+    {
+    }
+}

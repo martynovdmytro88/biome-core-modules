@@ -2,7 +2,7 @@ using Biome.Assets.Abstract;
 
 namespace Biome.Assets
 {
-    public sealed class AssetsService
+    internal sealed class AssetsService
     {
     }
 }

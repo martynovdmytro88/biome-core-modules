@@ -1,0 +1,21 @@
+{
+    "name": "Biome.GameStates.Installers",
+    "rootNamespace": "Biome.GameStates.Installers",
+    "references": [
+        "Biome.GameStates",
+        "Biome.GameStates.Abstract",
+        "Biome.Assets.Abstract",
+        "Biome.EventBus.Abstract",
+        "UniTask",
+        "VContainer"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

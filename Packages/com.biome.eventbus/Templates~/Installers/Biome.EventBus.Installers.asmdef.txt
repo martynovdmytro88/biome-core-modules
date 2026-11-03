@@ -1,0 +1,19 @@
+{
+    "name": "Biome.EventBus.Installers",
+    "rootNamespace": "Biome.EventBus.Installers",
+    "references": [
+        "Biome.EventBus",
+        "Biome.EventBus.Abstract",
+        "Biome.EventBus.Config",
+        "VContainer"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

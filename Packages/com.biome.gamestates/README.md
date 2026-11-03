@@ -18,7 +18,7 @@ This package carries the contract. It knows nothing about the host, DI or the Un
   `RecordingStateTransition`.
 
 The host owns `Runtime`, `Config`, `Events`, `Installers` and `InstallersMock`. `Templates~/` holds empty skeletons of the
-host layers and the state templates `State.cs.txt` and `StateInstaller.cs.txt`, read by the `create_game_state` generator.
+host layers. The state templates of the `create_game_state` generator live with the generator on the host side.
 
 ## Tests
 

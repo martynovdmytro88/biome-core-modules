@@ -1,0 +1,14 @@
+using Biome.EventBus.Abstract;
+using Biome.EventBus.Fakes;
+using VContainer;
+using VContainer.Unity;
+
+namespace Biome.EventBus.Installers.Mock
+{
+    public sealed class RecordingEventBusInstaller : IInstaller
+    {
+        public void Install(IContainerBuilder builder)
+        {
+        }
+    }
+}

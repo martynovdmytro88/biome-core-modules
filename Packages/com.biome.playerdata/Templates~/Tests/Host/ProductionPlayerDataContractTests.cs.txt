@@ -1,0 +1,14 @@
+using System;
+using Biome.PlayerData.Abstract;
+using Biome.PlayerData.Editor.Tests;
+using NUnit.Framework;
+
+namespace Biome.PlayerData.Tests.Host
+{
+    /// <summary>Binds the package's contract suite to the production implementation; red until the hooks are bound.</summary>
+    [TestFixture]
+    public sealed class ProductionPlayerDataContractTests : PlayerDataContractTests
+    {
+        protected override IPlayerDataService CreateFresh() => throw new NotImplementedException();
+    }
+}

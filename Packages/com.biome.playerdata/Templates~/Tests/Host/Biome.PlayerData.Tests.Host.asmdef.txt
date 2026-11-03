@@ -1,0 +1,26 @@
+{
+    "name": "Biome.PlayerData.Tests.Host",
+    "rootNamespace": "Biome.PlayerData.Tests.Host",
+    "references": [
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "Biome.PlayerData.Editor.Tests",
+        "Biome.PlayerData",
+        "Biome.PlayerData.Abstract"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
