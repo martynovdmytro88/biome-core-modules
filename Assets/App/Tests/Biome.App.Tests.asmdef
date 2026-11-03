@@ -1,0 +1,45 @@
+{
+    "name": "Biome.App.Tests",
+    "rootNamespace": "Biome.App.Tests",
+    "references": [
+        "Biome.App",
+        "VContainer",
+        "Biome.EventBus.Abstract",
+        "Biome.LocalStore.Abstract",
+        "UnityEngine.TestRunner",
+        "Biome.EventBus.Fakes",
+        "Biome.Configs.Abstract",
+        "Biome.Configs.Config",
+        "Biome.Configs.Fakes",
+        "Biome.Configs.Installers.Mock",
+        "Biome.PlayerData",
+        "Biome.PlayerData.Abstract",
+        "Biome.PlayerData.Fakes",
+        "Biome.LocalStore",
+        "Biome.LocalStore.Config",
+        "Biome.LocalStore.Fakes",
+        "UniTask",
+        "Biome.Assets.Abstract",
+        "Biome.GameStates.Abstract",
+        "Biome.GameStates.Data",
+        "Biome.GameStates.Events",
+        "Biome.GameStates.Config",
+        "Biome.Configs",
+        "Biome.Configs.Installers",
+        "Biome.GameStates.Installers",
+        "Biome.LocalStore.Installers.Mock"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,19 @@
+{
+    "name": "Biome.PlayerData.Installers",
+    "rootNamespace": "Biome.PlayerData.Installers",
+    "references": [
+        "Biome.PlayerData",
+        "Biome.PlayerData.Abstract",
+        "Biome.LocalStore.Abstract",
+        "VContainer"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

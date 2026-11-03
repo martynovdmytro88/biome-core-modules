@@ -69,4 +69,10 @@ host only by copying again. The tag `utils/vX.Y.Z` marks the version a copy was 
 
 The repository root is also a Unity project (`6000.5.4f1`). Open it to compile the packages and the utilities and run their
 suites in the Test Runner without a host. The packages are embedded here, so `Packages/manifest.json` has no `com.biome.*`
-entries and no `testables`. Tests that need a host layer or VContainer report Inconclusive here.
+entries and no `testables`. Its host layers live under `Assets/App/Modules/`.
+
+## App template
+
+`Assets/App/` is this project's own composition root and the neutral template a host copies. It is not a package: a host owns
+its copy, and a later change here reaches a host only by copying again. The tag `app/vX.Y.Z` marks the version a copy was
+taken from. `Assets/App/README.md` lists what is copied as is, where a host writes and what the scaffolder substitutes.

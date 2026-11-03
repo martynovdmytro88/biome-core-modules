@@ -1,0 +1,21 @@
+{
+    "name": "Biome.Configs.Installers.Mock",
+    "rootNamespace": "Biome.Configs.Installers.Mock",
+    "references": [
+        "Biome.Configs.Abstract",
+        "Biome.Configs.Config",
+        "Biome.Configs.Fakes",
+        "VContainer"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

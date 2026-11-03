@@ -1,8 +1,10 @@
 {
   "dependencies": {
+    "com.unity.addressables": "2.9.1",
     "com.unity.inputsystem": "1.19.0",
     "com.unity.pipeline": "0.6.0-exp.1",
     "com.unity.test-framework": "1.7.0",
-    "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask#2.5.11"
+    "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask#2.5.11",
+    "jp.hadashikick.vcontainer": "https://github.com/hadashiA/VContainer.git?path=VContainer/Assets/VContainer#1.19.0"
   }
 }

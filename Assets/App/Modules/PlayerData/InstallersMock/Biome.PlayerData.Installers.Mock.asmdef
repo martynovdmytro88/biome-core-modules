@@ -1,0 +1,20 @@
+{
+    "name": "Biome.PlayerData.Installers.Mock",
+    "rootNamespace": "Biome.PlayerData.Installers.Mock",
+    "references": [
+        "Biome.PlayerData.Abstract",
+        "Biome.PlayerData.Fakes",
+        "VContainer"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

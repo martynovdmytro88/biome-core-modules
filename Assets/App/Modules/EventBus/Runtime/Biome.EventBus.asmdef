@@ -1,0 +1,18 @@
+{
+    "name": "Biome.EventBus",
+    "rootNamespace": "Biome.EventBus",
+    "references": [
+        "Biome.EventBus.Abstract",
+        "Biome.EventBus.Data",
+        "Biome.EventBus.Config"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

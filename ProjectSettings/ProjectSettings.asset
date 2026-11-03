@@ -861,7 +861,7 @@ PlayerSettings:
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: marauders-unity
+  metroApplicationDescription: BiomeCoreModules
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0

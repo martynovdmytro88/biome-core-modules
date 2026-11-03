@@ -1,0 +1,16 @@
+{
+    "name": "Biome.Assets.Config",
+    "rootNamespace": "Biome.Assets.Config",
+    "references": [
+        "Biome.Assets.Data"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
