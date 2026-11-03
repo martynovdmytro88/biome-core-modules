@@ -1,0 +1,86 @@
+{
+  "dependencies": {
+    "com.biome.assets": {
+      "version": "file:com.biome.assets",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.cysharp.unitask": "2.5.11"
+      }
+    },
+    "com.biome.configs": {
+      "version": "file:com.biome.configs",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.cysharp.unitask": "2.5.11"
+      }
+    },
+    "com.biome.eventbus": {
+      "version": "file:com.biome.eventbus",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "com.biome.gamestates": {
+      "version": "file:com.biome.gamestates",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.biome.eventbus": "0.1.0",
+        "com.biome.assets": "0.1.0",
+        "com.cysharp.unitask": "2.5.11"
+      }
+    },
+    "com.biome.localstore": {
+      "version": "file:com.biome.localstore",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "com.biome.playerdata": {
+      "version": "file:com.biome.playerdata",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.biome.localstore": "0.1.0",
+        "com.biome.eventbus": "0.1.0"
+      }
+    },
+    "com.cysharp.unitask": {
+      "version": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask#2.5.11",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "2e993ff18f28c931602a07292df0b0804eebef99"
+    },
+    "com.unity.ext.nunit": {
+      "version": "2.1.0",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.test-framework": {
+      "version": "1.7.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.ext.nunit": "2.1.0",
+        "com.unity.modules.imgui": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      }
+    },
+    "com.unity.modules.imgui": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.jsonserialize": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {}
+    }
+  }
+}
