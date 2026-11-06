@@ -6,20 +6,33 @@ The single entry point to the project's configs: an environment names where each
 owned by the config's module turn the raw asset into the config, and a consumer reads it through `IConfigsReader` or
 the `IConfig<T>` provider. Configs are immutable after load; there is no re-init within a session. Main thread only.
 
-## Layers
+## Package and host
 
-Every namespace equals its asmdef `name` (`rootNamespace` equals `name` too).
+The contract and the engine-free layers come from the package `com.biome.configs` 0.1.2; its README describes them. This
+folder holds the host layers. Every namespace equals its asmdef `name` (`rootNamespace` equals `name` too).
+
+From the package:
 
 - `Biome.Configs.Abstract` (`Abstract/`, refs UniTask, engine-free) — the contract: `IConfigsService` · `IConfigsReader` ·
-  `IConfig<T>` · `IConfigLoader` · `IConfigsEnvironment` · `IConfigSourceReader` · `ConfigSource` · `ConfigSourceKind` ·
-  `ConfigNotInitializedException` · `ConfigLoadException`. UniTask is a deliberate exposure in this contract.
-- `Biome.Configs.Data` (`Data/`, refs none, engine-free) — module state.
-- `Biome.Configs.Config` (`Config/`) — the environment config.
-- `Biome.Configs` (`Runtime/`) — the service, the provider and the source reader.
-- `Biome.Configs.Installers` (`Installers/`, not auto-referenced) — the VContainer installer.
-- `Biome.Configs.Fakes` (`Fakes/`, Editor-only, not auto-referenced) — fakes of the contract.
-- `Biome.Configs.Installers.Mock` (`InstallersMock/`, Editor-only, not auto-referenced) — the mock-profile installer.
-- `Biome.Configs.Tests` (`Tests/`, EditMode) — the module's tests.
+  `IConfig<T>` · `IConfigLoader` · `IConfigsEnvironment` · `IConfigsEnvironmentGuard` · `IConfigSourceReader` ·
+  `ConfigSource` · `ConfigSourceKind` · `ConfigNotInitializedException` · `ConfigLoadException`. UniTask is a deliberate
+  exposure in this contract.
+- `Biome.Configs.Data` (`Data/`, refs none, engine-free) — module state (`ConfigStore`).
+- `Biome.Configs.Fakes` (`Fakes/`, Editor-only, not auto-referenced) — fakes of the contract (`FakeConfigsService` ·
+  `FakeConfigsEnvironment` · `FakeConfigLoader`).
+- `Biome.Configs.Editor.Tests` (`Tests/Editor/`) — the contract suite with its fixture on the fake;
+  `Biome.Configs.Editor.Tests.Consumer` (`Tests/Editor/Consumer/`) — the consumer fixture.
+
+Here:
+
+- `Biome.Configs.Config` (`Config/`) — the environment config (`EnvironmentConfig`).
+- `Biome.Configs` (`Runtime/`) — the service (`ConfigsService`), the provider (`ConfigProvider`) and the source reader
+  (`ResourcesConfigSource`).
+- `Biome.Configs.Installers` (`Installers/`, not auto-referenced) — the VContainer installer (`ConfigsInstaller`).
+- `Biome.Configs.Installers.Mock` (`InstallersMock/`, Editor-only, not auto-referenced) — the mock-profile installer
+  (`ConfigsInstallerMock`) and `ConfigsTestEnvironment`.
+- `Biome.Configs.Tests.Host` (`Tests/Host/`, EditMode) — `ProductionConfigsServiceContractTests`: the package's suite on
+  the production service.
 
 There is no `Events/` layer.
 

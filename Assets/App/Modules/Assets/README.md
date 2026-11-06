@@ -7,30 +7,47 @@ context is a lifetime scope (global · game state · window); an asset leaves me
 held by several contexts is loaded once. A leaf service: it publishes no events, persists nothing and references no
 other module. Main thread only.
 
-## Layers
+## Package and host
 
-Every namespace equals its asmdef `name` (`rootNamespace` equals `name` too).
+The contract and the engine-free layers come from the package `com.biome.assets` 0.1.2; its README describes them. This
+folder holds the host layers. Every namespace equals its asmdef `name` (`rootNamespace` equals `name` too).
+
+From the package:
 
 - `Biome.Assets.Abstract` (`Abstract/`, refs UniTask only, engine-free) — the contract: `IAssetsService`
   (`GlobalContext` · `CreateContext`) · `IAssetsContext` (`CreateChild` · `LoadAsync` by key and by key list ·
   `PreloadByLabelAsync` · `LoadSceneAsync` · `UnloadSceneAsync` · `Release` · `Unload`) · the value types `AssetKey` and
-  `AssetLabel` (plain strings, ordinal) and `SceneHandle` (key plus instance id, opaque, no engine type).
-- `Biome.Assets.Data` (`Data/`, engine-free) and `Biome.Assets.Config` (`Config/`, refs Data) — reserved: both asmdefs
-  exist with no types.
+  `AssetLabel` (plain strings, ordinal) and `SceneHandle` (key plus instance id, opaque, no engine type) · the seam
+  `IAssetBackend` (load-by-key · resolve-label · load-scene, no ref counting).
+- `Biome.Assets.Data` (`Data/`, engine-free) — reserved: the asmdef exists with no types.
+- `Biome.Assets.Fakes` (`Fakes/`, Editor-only, not auto-referenced) — `FakeAssetBackend`, the fake of the seam.
+- `Biome.Assets.Editor.Tests` (`Tests/Editor/`) — the value-type tests and the seam suite on the fake;
+  `Biome.Assets.Tests` (`Tests/Runtime/`) — the contract suites of the service (`AssetsContractTests`) and of the seam
+  (`AssetBackendContractTests`), written once.
+
+Here:
+
+- `Biome.Assets.Config` (`Config/`, refs Data) — reserved: the asmdef exists with no types.
 - `Biome.Assets` (`Runtime/`) — `AssetsFactory.CreateAddressables()` (the public entry) · `Contexts/` (`AssetsService`,
   `AssetsContext`, internal) · `RefStore/` (one entry per key with its holding contexts and one shared in-flight load) ·
-  `Backends/` (`internal IAssetBackend`, load-by-key · resolve-label · load-scene, no ref counting; `AddressablesBackend`,
-  the only Addressables code).
-- `Biome.Assets.Fakes` (`Fakes/`, Editor-only, not auto-referenced) — `FakeAssetBackend` and
-  `FakeAssets.CreateService(backend)`: the real store and contexts over the fake backend, a behavioural stand-in.
+  `Backends/` (`AddressablesBackend`, internal, the only Addressables code).
 - `Biome.Assets.Installers` (`Installers/`, not auto-referenced) — `AssetsInstaller` (VContainer `IInstaller`): one
   `IAssetsService` per scope, disposed with it. The module's only VContainer reference in shipping code.
-- `Biome.Assets.Installers.Mock` (`InstallersMock/`, Editor-only, not auto-referenced) — `MockAssetsInstaller`: the same
+- `Biome.Assets.Installers.Mock` (`InstallersMock/`, Editor-only, not auto-referenced) — `FakeAssets.CreateService(backend)`:
+  the real store and contexts over a `FakeAssetBackend`, a behavioural stand-in; `MockAssetsInstaller`: the same
   contract over a caller-kept `FakeAssetBackend` (seed assets and scenes, read counters).
-- Tests: `Biome.Assets.Tests.Shared` (`Tests/Shared/`) — the contract suite written once over the contract, plus the
-  `CanonicalProbe` component double; `Biome.Assets.Tests` (`Tests/`, EditMode) — the suite on the fake and the
-  implementation-side cases; `Biome.Assets.Tests.PlayMode` (`Tests/PlayMode/`) — the suite on Addressables;
-  `Biome.Assets.Tests.Editor` (`Tests/Editor/`) — the Addressables test content setup.
+- Tests:
+  - `Biome.Assets.Tests.Host` (`Tests/Host/`, EditMode) — `FakeBackendAssetsContractTests`: the service suite on the
+    production store and contexts over the fake backend.
+  - `Biome.Assets.Tests.PlayMode` (`Tests/PlayMode/`) — both suites on Addressables, in Use Asset Database mode:
+    `AddressablesAssetsContractTests` (the service from `AssetsFactory`) and `AddressablesBackendContractTests` (the
+    backend alone).
+  - `Biome.Assets.Tests.Editor` (`Tests/Editor/`, Editor-only) — `AddressablesTestContent`, the PlayMode prebuild and
+    cleanup: it puts the smoke content of `Tests/Content/` in a temporary Addressables group (`assets-tests/a|b` under
+    the label `assets-tests`, `assets-tests/scene`), selects Use Asset Database, and removes all of it after the run.
+    It finds the content by GUID and creates the Addressables settings when the project has none, deleting them again
+    afterwards.
+  - `Tests/Content/` — `smoke-a.txt`, `smoke-b.txt`, `smoke-scene.unity` (empty).
 
 ## Decisions kept in code
 

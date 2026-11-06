@@ -4,35 +4,44 @@ Small typed key-value persistence over PlayerPrefs for **short-lived, low-volume
 settings, tutorial flags, UI preferences). **Not a save-game system** — no files, no atomic writes, no migrations.
 Main thread only; no async, encryption, sync or per-profile partitioning.
 
-## Layers (asmdefs)
+## Package and host
+
+The contract and the engine-free layers come from the package `com.biome.localstore` 0.1.2; its README describes them.
+This folder holds the host layers.
+
+From the package:
 
 - `Biome.LocalStore.Abstract` (`Abstract/`, engine-free) — the contract consumers bind to: `ILocalStoreService`
   (`TryGet / Set / Has / Remove / Clear / Flush`), `ReadStatus` (`Ok · Missing · Corrupt · VersionMismatch`),
-  `ILocalStoreRegistry` + `LocalStoreEntry` (`type → { key, version }`, an `IEquatable` value type), the two
-  exceptions. No serializer type in any signature — a reference-graph fact, not an agreement.
+  `ILocalStoreRegistry` + `LocalStoreEntry` (`type → { key, version }`, an `IEquatable` value type), the seam
+  `ILocalStoreBackend` (string → string), the two exceptions. No serializer type in any signature — a reference-graph
+  fact, not an agreement.
 - `Biome.LocalStore.Data` (`Data/`, engine-free) — the record format facts: envelope `{"v":<int>,"d":<payload>}`,
   manifest = JSON array of own prefixed keys.
 - `Biome.LocalStore.Config` (`Config/`) — `LocalStoreKeys` (prefix `ls.`, manifest key `ls.__manifest`) and
   `LocalStoreLimits` (key length · per-value UTF-8 bytes · total budget). The default figures are **placeholders**
   marked for the operator, not verified limits.
+- `Biome.LocalStore.Fakes` (`Fakes/`, Editor-only, not auto-referenced, engine-free) — `InMemoryLocalStoreBackend`, the
+  in-memory fake of the seam.
+- `Biome.LocalStore.Editor.Tests` (`Tests/Editor/`) — the contract suites of the seam and of the service.
+
+Here:
+
 - `Biome.LocalStore` (`Runtime/`) — `LocalStoreFactory.CreatePlayerPrefs(registry, limits)` (the public entry) ·
   `Core/` (the `internal` `LocalStore` implementation + the single module-owned `JsonSerializerSettings`,
-  `TypeNameHandling` off) · `BackendSeam/` (`internal ILocalStoreBackend`, string → string) · `PlayerPrefsBackend/`
-  (the production seam implementation, the only PlayerPrefs code) · `Registry/` (`DictionaryLocalStoreRegistry`, a
-  registry built in code — the composer builds the app's one).
+  `TypeNameHandling` off) · `PlayerPrefsBackend/` (the production seam implementation, the only PlayerPrefs code) ·
+  `Registry/` (`DictionaryLocalStoreRegistry`, a registry built in code — the composer builds the app's one).
 - `Biome.LocalStore.Installers` (`Installers/`, not auto-referenced) — `LocalStoreInstaller` (VContainer
   `IInstaller`): one `ILocalStoreService` per scope over PlayerPrefs. The module's only VContainer reference in
   shipping code.
-- `Biome.LocalStore.Fakes` (`Fakes/`, Editor-only, not auto-referenced, engine-free) — the fake of the seam: the real
-  core over an in-memory `ILocalStoreBackend`. Public entry `InMemoryLocalStore.Create(registry)`; the core and the
-  fake backend stay internal.
-- `Biome.LocalStore.Installers.Mock` (`InstallersMock/`, Editor-only, not auto-referenced) — `LocalStoreMockInstaller`,
-  the mock-profile twin of the installer: the same `ILocalStoreService`, backed by the fake instead of PlayerPrefs.
-  Takes only the registry. References Abstract + Fakes + VContainer — never Runtime or Config.
-- `Biome.LocalStore.Tests` (`Tests/`, EditMode) — the contract tests written once over the seam and run on the
-  in-memory fake and on PlayerPrefs (cleans only the keys it touched, never `DeleteAll`).
-- `Biome.LocalStore.Tests.Consumer` (`Tests/Consumer/`, EditMode) — the consumer fixture over Abstract + Fakes only:
-  what a consumer can rely on, through the fake.
+- `Biome.LocalStore.Installers.Mock` (`InstallersMock/`, Editor-only, not auto-referenced) — `InMemoryLocalStore.Create(registry)`
+  (namespace `Biome.LocalStore.Fakes`): the real core over the in-memory backend; and `LocalStoreMockInstaller`, the
+  mock-profile twin of the installer: the same `ILocalStoreService`, backed by that store instead of PlayerPrefs. Takes
+  only the registry.
+- `Biome.LocalStore.Tests.Host` (`Tests/Host/`, EditMode) — the package's suites on production:
+  `PlayerPrefsLocalStoreBackendContractTests` (the seam on PlayerPrefs), `InMemoryLocalStoreContractTests` (the core over
+  the in-memory backend), `PlayerPrefsLocalStoreContractTests` (the core over PlayerPrefs; cleans only the keys it
+  touched, never `DeleteAll`).
 
 ## Decisions kept in code
 
@@ -42,9 +51,9 @@ throws with the store unchanged · raw-string cache, never the object · an inst
 `Flush()` is the caller's, no engine lifecycle in the module · the core is `internal`; the public entries are the
 factory and `DictionaryLocalStoreRegistry` — the registry stays public because type registration exists only on the
 concrete class, and widening `ILocalStoreRegistry` would change the contract · `InternalsVisibleTo` only for the
-module's own `.Tests` / `.Fakes` · the fake is the real core over an in-memory seam, not a re-implementation, so a
+module's own `.Installers.Mock` / `.Tests.Host` · the fake is the real core over an in-memory seam, not a re-implementation, so a
 consumer's tests exercise production logic · the mock installer takes only the registry (the fake's limits are
-placeholders) · the consumer fixture proves the contract is reachable without Runtime or Config.
+placeholders).
 
 ## Not in this slice
 

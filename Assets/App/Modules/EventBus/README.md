@@ -4,29 +4,38 @@
 
 The communication channel between modules: a producer publishes a **readonly, past-tense fact struct**, any number of
 independent listeners (UI · controllers · VFX · audio · gameplay) receive it, and the producer knows none of them. The
-module never names a payload type — each producer owns its facts. Own implementation, no package. Main thread only.
+module never names a payload type — each producer owns its facts. Main thread only.
 
-## Layers
+## Package and host
 
-Every namespace equals its asmdef `name` (`rootNamespace` equals `name` too).
+The contract and the engine-free layers come from the package `com.biome.eventbus` 0.1.2; its README describes them.
+This folder holds the host layers. Every namespace equals its asmdef `name` (`rootNamespace` equals `name` too).
+
+From the package:
 
 - `Biome.EventBus.Abstract` (`Abstract/`, refs none, engine-free) — the contract: `IEvent<TData>` (typed channel, the
   hot path) · `IEventPublisher` / `IEventSubscriber` / `IEventBus` · `EventListener<TData>(in TData)` ·
   `IEventErrorSink` · `IEventTrace`.
 - `Biome.EventBus.Data` (`Data/`, refs none, engine-free) — `ExceptionPolicy` (`Isolate` · `Rethrow`).
 - `Biome.EventBus.Config` (`Config/`) — `EventBusConfig` (policy · max dispatch depth · initial listener capacity · tracing).
-- `Biome.EventBus.Fakes` (`Fakes/`, Editor-only, not auto-referenced; refs Abstract) — `RecordingEventBus`, the
-  recording fake of `IEventBus`; it never ships in a player.
+- `Biome.EventBus.Fakes` (`Fakes/`, Editor-only, not auto-referenced) — `RecordingEventBus`, the recording fake of
+  `IEventBus`; it never ships in a player.
+- `Biome.EventBus.Editor.Tests` (`Tests/Editor/`) — the contract suite written once over `IEventBus` with its fixture on
+  the fake, and the test payloads; `Biome.EventBus.Editor.Tests.Consumer` (`Tests/Editor/Consumer/`) — the consumer
+  fixture over Abstract + Fakes only.
+
+Here:
+
 - `Biome.EventBus` (`Runtime/`) — `EventBusFactory` (the creation point), `EventBus` (the production bus, internal),
-  `DebugLogEventErrorSink` (the default sink).
+  `Channel`, `DebugLogEventErrorSink` (the default sink).
 - `Biome.EventBus.Installers` (`Installers/`, not auto-referenced) — VContainer `IInstaller`s: `EventBusInstaller`
   (the production bus), one bus per scope under `IEventBus` · `IEventPublisher` · `IEventSubscriber`, disposed with the
   scope. The module's only VContainer reference.
 - `Biome.EventBus.Installers.Mock` (`InstallersMock/`, Editor-only, not auto-referenced) — `RecordingEventBusInstaller`
   (the fake).
-- `Biome.EventBus.Tests` (`Tests/`, EditMode) — the contract suite written once over `IEventBus`, run on the fake and
-  on the production bus, plus production-only cases (isolation · tracing · thread guard · zero-alloc).
-  `Biome.EventBus.Tests.Consumer` (`Tests/Consumer/`) — a test assembly referencing only Abstract, standing in for a consumer.
+- `Biome.EventBus.Tests.Host` (`Tests/Host/`, EditMode) — `ProductionEventBusContractTests`: the package's suite on the
+  production bus, plus the production-only cases (dispose guard · isolation and the sink · tracing · thread guard ·
+  minimal factory call · zero-alloc).
 
 ## Decisions kept in code
 
