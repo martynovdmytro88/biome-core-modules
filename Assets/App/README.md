@@ -21,7 +21,7 @@ carries no settings asset.
 
 ## Copied as is
 
-These work in a host unchanged, once the table below is applied:
+These work in a host unchanged, once the scaffolder's substitutions are applied:
 
 - `Bootstrap/`, `Composition/AppProfile.cs`, `Composition/Profiles/`, `Resources/`, `Editor/`, `AssemblyInfo.cs`.
 - `States/AppStatesInstaller.cs`, `States/ConfigFlowDescriptorProvider.cs`, `States/StateFlowStarter.cs`, `States/Scenario/`,
@@ -46,17 +46,8 @@ is not synchronised back either. The tag `app/vX.Y.Z` marks the version a copy w
 ## What the scaffolder substitutes
 
 The files hold real values so that this project compiles; a placeholder is the value's name, not a token in the code.
-
-| Value here | Placeholder | Where |
-|---|---|---|
-| `Biome.App`, `Biome.App.Editor`, `Biome.App.Tests` | `{asmdef-root}.App…` | asmdef `name` · `rootNamespace` · references, namespaces, `AssemblyInfo.cs`, `InternalsVisibleTo`, `m_EditorClassIdentifier`, state type names in `AppFlow.asset` and `TestFlow.asset` |
-| `Biome.App.ProfileIdOverride` | `{asmdef-root}.App.ProfileIdOverride` | `AppCompositionRoot.EditorProfileIdKey` |
-| `Biome/App Composition Root`, `Biome/App Profile` | `{project-name}/…` | `CreateAssetMenu` |
-| `Biome.Builder.Editor` | `{asmdef-root}.Builder.Editor` | `BuilderScript.cs` |
-| `Assets/App/…` | `Assets/{project-name}/App/…` | path constants in `Tests/`, this folder's location |
-| `BiomeCoreModules`, `DefaultCompany`, the template bundle id | `{project-name}` and the project's own | `ProjectSettings.asset`: productName, companyName, applicationIdentifier |
-
-The asmdef and namespace root of the modules (`Biome.*`) stays as it is: the packages fix it.
+The table of what the scaffolder substitutes in a host's copy is the scaffolder's: `biome-projects`
+`TOOLS/SCAFFOLDER/scaffolder.md` §6 Unity repo.
 
 ## Dependencies
 
