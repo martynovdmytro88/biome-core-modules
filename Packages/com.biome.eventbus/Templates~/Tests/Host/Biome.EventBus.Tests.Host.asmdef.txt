@@ -6,7 +6,9 @@
         "UnityEditor.TestRunner",
         "Biome.EventBus.Editor.Tests",
         "Biome.EventBus",
-        "Biome.EventBus.Abstract"
+        "Biome.EventBus.Abstract",
+        "Biome.EventBus.Config",
+        "Biome.EventBus.Data"
     ],
     "includePlatforms": [
         "Editor"

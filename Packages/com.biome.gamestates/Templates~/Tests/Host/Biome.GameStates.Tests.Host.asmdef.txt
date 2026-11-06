@@ -7,8 +7,20 @@
         "Biome.GameStates.Editor.Tests",
         "Biome.GameStates",
         "Biome.GameStates.Abstract",
+        "Biome.GameStates.Data",
+        "Biome.GameStates.Config",
+        "Biome.GameStates.Events",
         "Biome.GameStates.Fakes",
-        "UniTask"
+        "Biome.GameStates.Installers",
+        "Biome.GameStates.Installers.Mock",
+        "Biome.Assets",
+        "Biome.Assets.Abstract",
+        "Biome.Assets.Fakes",
+        "Biome.Assets.Installers.Mock",
+        "Biome.EventBus.Abstract",
+        "Biome.EventBus.Fakes",
+        "UniTask",
+        "VContainer"
     ],
     "includePlatforms": [
         "Editor"

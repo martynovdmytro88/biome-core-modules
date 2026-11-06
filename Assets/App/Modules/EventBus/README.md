@@ -8,7 +8,7 @@ module never names a payload type — each producer owns its facts. Main thread 
 
 ## Package and host
 
-The contract and the engine-free layers come from the package `com.biome.eventbus` 0.1.2; its README describes them.
+The contract and the engine-free layers come from the package `com.biome.eventbus` 0.1.3; its README describes them.
 This folder holds the host layers. Every namespace equals its asmdef `name` (`rootNamespace` equals `name` too).
 
 From the package:

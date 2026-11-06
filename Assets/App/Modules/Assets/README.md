@@ -9,7 +9,7 @@ other module. Main thread only.
 
 ## Package and host
 
-The contract and the engine-free layers come from the package `com.biome.assets` 0.1.2; its README describes them. This
+The contract and the engine-free layers come from the package `com.biome.assets` 0.1.3; its README describes them. This
 folder holds the host layers. Every namespace equals its asmdef `name` (`rootNamespace` equals `name` too).
 
 From the package:
@@ -38,7 +38,12 @@ Here:
   contract over a caller-kept `FakeAssetBackend` (seed assets and scenes, read counters).
 - Tests:
   - `Biome.Assets.Tests.Host` (`Tests/Host/`, EditMode) — `FakeBackendAssetsContractTests`: the service suite on the
-    production store and contexts over the fake backend.
+    production store and contexts over the fake backend; `FakeBackendBehaviorTests`: what only the fake's counters show
+    (reference counting across contexts, the shared in-flight load and its cancellation); `CanonicalEntryTypeTests`: a
+    key loads once by the asset's own type and each caller's type is a view of it.
+  - `Biome.Assets.Tests.Shared` (`Tests/Shared/`, not Editor-only) — `CanonicalProbe` and `ICanonicalProbe`, the
+    component and interface the canonical-type tests put on their prefab; Unity adds no component from an Editor-only
+    assembly.
   - `Biome.Assets.Tests.PlayMode` (`Tests/PlayMode/`) — both suites on Addressables, in Use Asset Database mode:
     `AddressablesAssetsContractTests` (the service from `AssetsFactory`) and `AddressablesBackendContractTests` (the
     backend alone).

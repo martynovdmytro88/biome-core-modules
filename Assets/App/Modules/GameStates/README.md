@@ -8,7 +8,7 @@ a state's own logic or content; states live in the app, not here.
 
 ## Package and host
 
-The contract and the engine-free layers come from the package `com.biome.gamestates` 0.1.2; its README describes them.
+The contract and the engine-free layers come from the package `com.biome.gamestates` 0.1.3; its README describes them.
 This folder holds the host layers.
 
 From the package:

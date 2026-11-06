@@ -14,8 +14,8 @@ using VContainer;
 namespace Biome.App.Tests
 {
     /// <summary>
-    /// The test flow over the test profile: the profile selects <see cref="TestScope"/>, whose flow lists the one state
-    /// <see cref="TestInitState"/>. The flow starts there and goes nowhere.
+    /// The test flow over the test profile: the profile selects <see cref="TestScope"/>, whose flow starts in
+    /// <see cref="TestInitState"/> and goes nowhere; <see cref="EmergencyState"/> is entered only on an Init failure.
     /// </summary>
     public sealed class AppGameStatesTestFlowTests
     {

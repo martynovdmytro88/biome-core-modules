@@ -35,7 +35,7 @@ namespace Biome.App.Tests
         public void HandleAsync_InitFailed_RequestsTheEmergencyState()
         {
             var machine = new RecordingMachine();
-            var handler = new EmergencyScenarioHandler(machine);
+            var handler = new DefaultStateScenarioHandler(machine);
 
             handler.HandleAsync(InitFailure(), CancellationToken.None);
 
@@ -45,7 +45,7 @@ namespace Biome.App.Tests
         [Test]
         public void HandleAsync_InitFailed_ReturnsACompletedTask()
         {
-            var handler = new EmergencyScenarioHandler(new RecordingMachine());
+            var handler = new DefaultStateScenarioHandler(new RecordingMachine());
 
             var task = handler.HandleAsync(InitFailure(), CancellationToken.None);
 
@@ -55,7 +55,7 @@ namespace Biome.App.Tests
         [Test]
         public void Constructor_NullMachine_Throws()
         {
-            Assert.Throws<ArgumentNullException>(() => new EmergencyScenarioHandler(null));
+            Assert.Throws<ArgumentNullException>(() => new DefaultStateScenarioHandler(null));
         }
     }
 }

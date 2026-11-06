@@ -41,15 +41,17 @@ namespace Biome.App.Tests
         }
 
         [Test]
-        public void TestFlow_ToConfig_IsTheOneTestInitStateWithNoTransitions()
+        public void TestFlow_ToConfig_HasTheTestInitStateAndTheEmergencyTransition()
         {
             var flow = Load(TestFlowPath).ToConfig();
 
             Assert.That(flow.Name, Is.EqualTo("TestFlow"));
             Assert.That(flow.InitState, Is.EqualTo(TestInit));
-            Assert.That(flow.States, Has.Length.EqualTo(1));
+            Assert.That(flow.States, Has.Length.EqualTo(2));
             AssertState(flow.States[0], TestInit, string.Empty);
-            Assert.That(flow.Transitions, Is.Empty);
+            AssertState(flow.States[1], Emergency, string.Empty);
+            Assert.That(flow.Transitions, Has.Length.EqualTo(1));
+            AssertTransition(flow.Transitions[0], TestInit, Emergency);
         }
 
         [TestCase(AppFlowPath)]

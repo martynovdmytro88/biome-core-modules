@@ -5,7 +5,8 @@ namespace Biome.App.Tests
 {
     /// <summary>
     /// The test variant of the profile scope: the common installers over <c>EnvironmentConfig.Test</c> and the test flow,
-    /// whose one state lives on the test side. It lists that state in the app's state table; the app never names it.
+    /// whose Init state lives on the test side. It lists that state in the app's state table; the app never names it.
+    /// The flow's Emergency state comes from the app catalogue.
     /// </summary>
     public sealed class TestScope : AppProfileScope
     {

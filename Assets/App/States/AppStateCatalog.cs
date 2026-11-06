@@ -31,7 +31,7 @@ namespace Biome.App
         private static readonly Entry[] s_app =
         {
             new Entry(typeof(InitState), states => states.AddState<InitState, InitStateInstaller>(scope =>
-                scope.Register<EmergencyScenarioHandler>(Lifetime.Scoped).As<IStateScenarioHandler>())),
+                scope.Register<DefaultStateScenarioHandler>(Lifetime.Scoped).As<IStateScenarioHandler>())),
             new Entry(typeof(EmergencyState), states => states.AddState<EmergencyState, EmergencyStateInstaller>()),
         };
 

@@ -6,7 +6,7 @@ Main thread only; no async, encryption, sync or per-profile partitioning.
 
 ## Package and host
 
-The contract and the engine-free layers come from the package `com.biome.localstore` 0.1.2; its README describes them.
+The contract and the engine-free layers come from the package `com.biome.localstore` 0.1.3; its README describes them.
 This folder holds the host layers.
 
 From the package:

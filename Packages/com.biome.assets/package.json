@@ -1,6 +1,6 @@
 {
   "name": "com.biome.assets",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "displayName": "Biome Assets",
   "description": "The Assets module contract: context-scoped loading by key or label, the backend seam and the fake backend. The implementation lives in the host.",
   "unity": "6000.5",

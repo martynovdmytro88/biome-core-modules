@@ -27,8 +27,8 @@
       "depth": 0,
       "source": "embedded",
       "dependencies": {
-        "com.biome.eventbus": "0.1.2",
-        "com.biome.assets": "0.1.2",
+        "com.biome.eventbus": "0.1.3",
+        "com.biome.assets": "0.1.3",
         "com.cysharp.unitask": "2.5.11"
       }
     },
@@ -43,8 +43,8 @@
       "depth": 0,
       "source": "embedded",
       "dependencies": {
-        "com.biome.localstore": "0.1.2",
-        "com.biome.eventbus": "0.1.2"
+        "com.biome.localstore": "0.1.3",
+        "com.biome.eventbus": "0.1.3"
       }
     },
     "com.cysharp.unitask": {

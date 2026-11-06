@@ -1,12 +1,12 @@
 {
   "name": "com.biome.gamestates",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "displayName": "Biome GameStates",
   "description": "The GameStates module contract: state, state machine, sub-state, transition and scenario interfaces with their fakes and the host skeleton templates. The implementation lives in the host.",
   "unity": "6000.5",
   "dependencies": {
-    "com.biome.eventbus": "0.1.2",
-    "com.biome.assets": "0.1.2",
+    "com.biome.eventbus": "0.1.3",
+    "com.biome.assets": "0.1.3",
     "com.cysharp.unitask": "2.5.11"
   }
 }

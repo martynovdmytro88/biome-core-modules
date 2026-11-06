@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using Biome.GameStates.Abstract;
 using Cysharp.Threading.Tasks;
@@ -5,14 +6,23 @@ using Cysharp.Threading.Tasks;
 namespace Biome.App
 {
     /// <summary>
-    /// The scenario handler of the Init scope. The machine already logs the failure and publishes the error event;
-    /// the reaction itself (for example a switch to Emergency) comes with the flow config.
+    /// The scenario handler of the Init scope: a failure sends the machine to <see cref="EmergencyState"/>. The machine
+    /// already logs the failure and publishes the error event.
     /// </summary>
     public sealed class DefaultStateScenarioHandler : IStateScenarioHandler
     {
+        private readonly IGameStateMachine _machine;
+
+        public DefaultStateScenarioHandler(IGameStateMachine machine)
+        {
+            _machine = machine ?? throw new ArgumentNullException(nameof(machine));
+        }
+
         /// <inheritdoc />
         public UniTask HandleAsync(StateFailure failure, CancellationToken ct)
         {
+            // The switch queue is busy until this handler returns, so the switch is queued, not awaited.
+            _machine.SwitchAsync<EmergencyState>(ct).Forget();
             return UniTask.CompletedTask;
         }
     }

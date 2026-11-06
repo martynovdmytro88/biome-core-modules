@@ -8,7 +8,7 @@ the `IConfig<T>` provider. Configs are immutable after load; there is no re-init
 
 ## Package and host
 
-The contract and the engine-free layers come from the package `com.biome.configs` 0.1.2; its README describes them. This
+The contract and the engine-free layers come from the package `com.biome.configs` 0.1.3; its README describes them. This
 folder holds the host layers. Every namespace equals its asmdef `name` (`rootNamespace` equals `name` too).
 
 From the package:
@@ -31,8 +31,12 @@ Here:
 - `Biome.Configs.Installers` (`Installers/`, not auto-referenced) — the VContainer installer (`ConfigsInstaller`).
 - `Biome.Configs.Installers.Mock` (`InstallersMock/`, Editor-only, not auto-referenced) — the mock-profile installer
   (`ConfigsInstallerMock`) and `ConfigsTestEnvironment`.
-- `Biome.Configs.Tests.Host` (`Tests/Host/`, EditMode) — `ProductionConfigsServiceContractTests`: the package's suite on
-  the production service.
+- `Biome.Configs.Tests.Host` (`Tests/Host/`, EditMode) — the package's suites on production: the service
+  (`ProductionConfigsServiceContractTests`), the environment (`EnvironmentConfigContractTests`), the Resources reader
+  (`ResourcesConfigSourceContractTests`, over an asset it makes and removes) and the provider
+  (`ProductionConfigProviderContractTests`); beside them the host's own cases: `EnvironmentConfigTests` (unresolvable
+  names, the duplicate guard), `ConfigProviderServiceTests` (the provider over the real service), `ConfigsInstallerTests`
+  and `ConfigsInstallerEnvironmentTests` (the installer against a real container, mock parity).
 
 There is no `Events/` layer.
 

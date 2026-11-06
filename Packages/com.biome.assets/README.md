@@ -35,6 +35,11 @@ A host must prove its own implementation: reference `Biome.Assets.Tests` from it
 so PlayMode works), derive from both suites and override `CreateService` / `CreateBackend` plus the key, label and scene
 members.
 
+`create_module --host_only` lays that binding on Addressables from `Templates~/Tests`: `Tests/PlayMode` (both suites over
+the smoke keys, red until `CreateService` / `CreateBackend` are bound), `Tests/Editor` (the prebuild step that puts the
+smoke content in a temporary Addressables group and removes it after the run) and `Tests/Content` (the smoke assets,
+with fixed GUIDs the prebuild step looks them up by). The host needs `com.unity.addressables`.
+
 Requires `com.unity.test-framework` in the project (deliberately not a package dependency). A package outside
 `Packages/` also needs an entry in `testables`.
 

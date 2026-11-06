@@ -8,7 +8,12 @@
         "Biome.Configs",
         "Biome.Configs.Abstract",
         "Biome.Configs.Data",
-        "UniTask"
+        "Biome.Configs.Config",
+        "Biome.Configs.Fakes",
+        "Biome.Configs.Installers",
+        "Biome.Configs.Installers.Mock",
+        "UniTask",
+        "VContainer"
     ],
     "includePlatforms": [
         "Editor"

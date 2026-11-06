@@ -18,4 +18,8 @@ MonoBehaviour:
     States:
     - StateType: Biome.App.Tests.TestInitState, Biome.App.Tests
       Scene: 
-    Transitions: []
+    - StateType: Biome.App.EmergencyState, Biome.App
+      Scene: 
+    Transitions:
+    - From: Biome.App.Tests.TestInitState, Biome.App.Tests
+      To: Biome.App.EmergencyState, Biome.App

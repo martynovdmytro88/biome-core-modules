@@ -242,6 +242,9 @@ namespace Biome.Utils.Commands.Tests
                 .ToArray();
             var builder = new AssemblyBuilder(TempRoot + "/Probe.dll", sources)
             {
+                // The host test assemblies are Editor-only, and Tests/Editor uses the UnityEditor API.
+                flags = AssemblyBuilderFlags.EditorAssembly,
+                referencesOptions = ReferencesOptions.UseEngineModules,
                 additionalReferences = editorAssemblies.Select(a => a.outputPath)
                     .Append(typeof(Assert).Assembly.Location)
                     .ToArray(),

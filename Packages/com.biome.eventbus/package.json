@@ -1,6 +1,6 @@
 {
   "name": "com.biome.eventbus",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "displayName": "Biome EventBus",
   "description": "The EventBus module contract: typed fact channels, publisher and subscriber interfaces, the delivery config and the recording fake. The implementation lives in the host.",
   "unity": "6000.5",

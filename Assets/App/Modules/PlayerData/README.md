@@ -6,7 +6,7 @@ the backend exists). v0 carries a single fact — whether the player has opened 
 
 ## Package and host
 
-The contract and the engine-free layers come from the package `com.biome.playerdata` 0.1.2; its README describes them.
+The contract and the engine-free layers come from the package `com.biome.playerdata` 0.1.3; its README describes them.
 This folder holds the host layers.
 
 From the package:

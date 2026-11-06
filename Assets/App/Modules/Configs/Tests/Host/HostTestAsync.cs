@@ -1,0 +1,25 @@
+using System;
+using Cysharp.Threading.Tasks;
+using NUnit.Framework;
+
+namespace Biome.Configs.Tests.Host
+{
+    /// <summary>Awaits an action that must fail and hands the exception back for the assertions.</summary>
+    internal static class HostTestAsync
+    {
+        public static async UniTask<TException> CatchAsync<TException>(Func<UniTask> action) where TException : Exception
+        {
+            try
+            {
+                await action();
+            }
+            catch (TException exception)
+            {
+                return exception;
+            }
+
+            Assert.Fail($"Expected {typeof(TException).Name}, but nothing was thrown.");
+            return null;
+        }
+    }
+}

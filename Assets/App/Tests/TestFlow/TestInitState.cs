@@ -7,8 +7,8 @@ using Cysharp.Threading.Tasks;
 namespace Biome.App.Tests
 {
     /// <summary>
-    /// The first state of the test flow: it reports its completion on the bus and goes nowhere on its own; the flow has
-    /// no state after it.
+    /// The first state of the test flow: it reports its completion on the bus and goes nowhere on its own; the flow leaves it
+    /// only for <see cref="EmergencyState"/> on a failure.
     /// </summary>
     public sealed class TestInitState : IGameState
     {

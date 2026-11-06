@@ -6,7 +6,19 @@
         "UnityEditor.TestRunner",
         "Biome.PlayerData.Editor.Tests",
         "Biome.PlayerData",
-        "Biome.PlayerData.Abstract"
+        "Biome.PlayerData.Abstract",
+        "Biome.PlayerData.Data",
+        "Biome.PlayerData.Events",
+        "Biome.PlayerData.Fakes",
+        "Biome.PlayerData.Installers",
+        "Biome.PlayerData.Installers.Mock",
+        "Biome.LocalStore",
+        "Biome.LocalStore.Abstract",
+        "Biome.LocalStore.Installers.Mock",
+        "Biome.EventBus.Abstract",
+        "Biome.EventBus.Fakes",
+        "Biome.EventBus.Installers.Mock",
+        "VContainer"
     ],
     "includePlatforms": [
         "Editor"

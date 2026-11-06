@@ -24,7 +24,7 @@ In the host's `Packages/manifest.json`, pin a package on its tag, never on a bra
 ```json
 {
   "dependencies": {
-    "com.biome.eventbus": "https://github.com/martynovdmytro88/biome-core-modules.git?path=/Packages/com.biome.eventbus#eventbus/v0.1.2",
+    "com.biome.eventbus": "https://github.com/martynovdmytro88/biome-core-modules.git?path=/Packages/com.biome.eventbus#eventbus/v0.1.3",
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask#2.5.11"
   },
   "testables": ["com.biome.eventbus"]
@@ -50,7 +50,7 @@ The path is relative to the host's `Packages/` folder. Move the pin back to a ta
 
 ## Versions and tags
 
-- Each package has its own SemVer version in `package.json` and its own tag: `<module>/vX.Y.Z`, for example `eventbus/v0.1.2`.
+- Each package has its own SemVer version in `package.json` and its own tag: `<module>/vX.Y.Z`, for example `eventbus/v0.1.3`.
 - A breaking contract change is a major version.
 - A contract change means an edit in the package, an entry in its `CHANGELOG.md` and a new tag. Hosts then move their pins.
 

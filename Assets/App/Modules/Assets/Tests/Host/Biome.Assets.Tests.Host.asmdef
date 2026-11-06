@@ -8,6 +8,7 @@
         "Biome.Assets.Abstract",
         "Biome.Assets.Fakes",
         "Biome.Assets.Installers.Mock",
+        "Biome.Assets.Tests.Shared",
         "UniTask"
     ],
     "includePlatforms": [
